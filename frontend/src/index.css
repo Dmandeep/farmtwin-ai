@@ -1,0 +1,194 @@
+@import "tailwindcss";
+
+/* ================================================================
+   FARMTWIN AI — DESIGN SYSTEM CSS
+   Art Direction: Agrarian Editorial (Cream + Burgundy + Gold)
+   Architecture: Zero-Slope (flat planes, hairline borders, no gradients)
+   ================================================================ */
+
+@layer base {
+  :root {
+    /* Background */
+    --cream-bg: #FAF6F0;
+    --cream-surface: #FFFDF9;
+    --cream-muted: #F2E9DE;
+    --cream-border: #E6D9C8;
+    
+    /* Burgundy */
+    --burgundy-deep: #2A080C;
+    --burgundy-primary: #6B0F1A;
+    --burgundy-dark: #4A0810;
+    --burgundy-hover: #540912;
+    --burgundy-light: rgba(107, 15, 26, 0.08);
+    --burgundy-border: rgba(107, 15, 26, 0.18);
+    
+    /* Gold Accent */
+    --gold-accent: #C5A059;
+    --gold-subtle: rgba(197, 160, 89, 0.2);
+
+    /* Typography */
+    font-family: 'Inter', 'Noto Sans Telugu', 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, sans-serif;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: #FAF6F0;
+    color: #2A080C;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    overflow-x: hidden;
+    letter-spacing: -0.01em;
+  }
+
+  /* Serif headings — editorial authority */
+  h1, h2, h3, .font-luxury-serif {
+    font-family: 'Cormorant Garamond', 'Noto Sans Telugu', Georgia, serif;
+    font-feature-settings: 'lnum' 1;
+  }
+
+  /* Accessibility: Focus-visible outlines */
+  *:focus-visible {
+    outline: 2px solid #6B0F1A;
+    outline-offset: 2px;
+  }
+
+  /* Selection styling */
+  ::selection {
+    background-color: #6B0F1A;
+    color: #FAF6F0;
+  }
+}
+
+/* ================================================================
+   ZERO-SLOPE CARD SYSTEM
+   Flat, planar surfaces. No gradients. Hairline borders only.
+   ================================================================ */
+
+.zero-slope-card {
+  background-color: #FFFDF9;
+  border: 1px solid #E6D9C8;
+  box-shadow: 0 1px 2px rgba(42, 8, 12, 0.03);
+}
+
+.zero-slope-card-burgundy {
+  background-color: #4A0810;
+  border: 1px solid rgba(197, 160, 89, 0.3);
+  color: #FAF6F0;
+}
+
+.zero-slope-card-interactive {
+  background-color: #FFFDF9;
+  border: 1px solid #E6D9C8;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.zero-slope-card-interactive:hover {
+  border-color: #6B0F1A;
+  background-color: #FFFDF9;
+  box-shadow: 0 2px 8px rgba(107, 15, 26, 0.08);
+}
+
+/* ================================================================
+   TOUCH TARGET SYSTEM
+   Minimum 48px for outdoor / calloused-hand usage
+   ================================================================ */
+
+.touch-target {
+  min-height: 48px;
+  min-width: 48px;
+}
+
+/* ================================================================
+   HAIRLINE BORDER UTILITIES
+   ================================================================ */
+
+.border-hairline {
+  border-width: 1px;
+  border-color: #E6D9C8;
+}
+
+.border-burgundy-hairline {
+  border-width: 1px;
+  border-color: rgba(107, 15, 26, 0.18);
+}
+
+.border-gold-hairline {
+  border-width: 1px;
+  border-color: rgba(197, 160, 89, 0.35);
+}
+
+/* ================================================================
+   SAFE AREA PADDING (Bottom Navigation)
+   ================================================================ */
+
+.pb-safe-nav {
+  padding-bottom: calc(5.5rem + env(safe-area-inset-bottom, 0px));
+}
+
+/* ================================================================
+   MINIMAL SCROLLBAR
+   ================================================================ */
+
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FAF6F0;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D9CAB5;
+  border-radius: 0px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6B0F1A;
+}
+
+/* ================================================================
+   ANIMATION — Minimal, purposeful entries only
+   ================================================================ */
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-in {
+  animation: fadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.fade-in {
+  animation: fadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* ================================================================
+   REDUCED MOTION — Accessibility
+   ================================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ================================================================
+   NO-SCROLLBAR UTILITY (for suggestion chips)
+   ================================================================ */
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

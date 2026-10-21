@@ -1,0 +1,203 @@
+{
+  "timestamp": "2026-10-21T13:42:48Z",
+  "total_tests": 27,
+  "passed": 27,
+  "failed": 0,
+  "warnings_count": 0,
+  "duration_seconds": 4.4,
+  "avg_latency_ms": 161.67,
+  "max_latency_ms": 918.92,
+  "tests": [
+    {
+      "status": "PASS",
+      "category": "Health",
+      "name": "GET /api/health",
+      "latency_ms": 52.62,
+      "details": "Service: 'FarmTwin AI Backend', Version: 1.0.0"
+    },
+    {
+      "status": "PASS",
+      "category": "Fields",
+      "name": "GET /api/fields",
+      "latency_ms": 6.67,
+      "details": "Retrieved 2 fields"
+    },
+    {
+      "status": "PASS",
+      "category": "Fields",
+      "name": "POST /api/fields (Create)",
+      "latency_ms": 44.81,
+      "details": "Created field id=3, tags: soil_source=farmer_reported, npk_status=not_yet_known"
+    },
+    {
+      "status": "PASS",
+      "category": "Fields",
+      "name": "GET /api/fields/3",
+      "latency_ms": 29.89,
+      "details": "Fetched field name='Automated Verification Plot (పరీక్ష చేను)'"
+    },
+    {
+      "status": "PASS",
+      "category": "Fields",
+      "name": "PUT /api/fields/3 (Update & Transparency Tags)",
+      "latency_ms": 36.7,
+      "details": "Updated name, soil_source='measured', npk_status='measured'"
+    },
+    {
+      "status": "PASS",
+      "category": "Fields",
+      "name": "POST /api/fields/3/set-active",
+      "latency_ms": 31.89,
+      "details": "Field activated; Exactly 1 field is active across DB"
+    },
+    {
+      "status": "PASS",
+      "category": "Fields",
+      "name": "DELETE /api/fields/3",
+      "latency_ms": 26.59,
+      "details": "Deleted successfully and verified 404 on subsequent GET"
+    },
+    {
+      "status": "PASS",
+      "category": "Weather",
+      "name": "GET /api/weather/current (Guntur)",
+      "latency_ms": 918.92,
+      "details": "Temp=28.0°C, RainChance=16%, Spray='ideal', 7-Day Forecast=7 days"
+    },
+    {
+      "status": "PASS",
+      "category": "Weather",
+      "name": "GET /api/weather/current (Lat/Lon Coordinates)",
+      "latency_ms": 773.6,
+      "details": "Coord weather resolved: District='CustomGuntur', Temp=28.0°C"
+    },
+    {
+      "status": "PASS",
+      "category": "Weather",
+      "name": "GET /api/weather/alerts (Warangal)",
+      "latency_ms": 765.74,
+      "details": "District='Warangal', Alerts count=0, Spray='ideal'"
+    },
+    {
+      "status": "PASS",
+      "category": "Advice",
+      "name": "POST /api/advice/recommend-crops (English: clay/canal)",
+      "latency_ms": 5.52,
+      "details": "Top recommended crop is 'Paddy / Rice (వరి)' [ID: paddy]"
+    },
+    {
+      "status": "PASS",
+      "category": "Advice",
+      "name": "POST /api/advice/recommend-crops (Telugu: బంకమట్టి/కాలువ)",
+      "latency_ms": 5.72,
+      "details": "Top crop is 'వరి (Paddy / Rice)', Reason: 'బంకమట్టి, నల్లరేగడి నేలలు మరియు కాలువ లే...'"
+    },
+    {
+      "status": "PASS",
+      "category": "Advice",
+      "name": "POST /api/advice/recommend-crops (English: black/borewell)",
+      "latency_ms": 5.59,
+      "details": "Top recommended crop is 'Cotton (కపాస్ / పత్తి)' [ID: cotton]"
+    },
+    {
+      "status": "PASS",
+      "category": "Advice",
+      "name": "POST /api/advice/recommend-crops (Telugu: నల్లరేగడి/బోరుబావి)",
+      "latency_ms": 5.5,
+      "details": "Top recommended crop is 'పత్తి (Cotton)' [ID: cotton]"
+    },
+    {
+      "status": "PASS",
+      "category": "Advice",
+      "name": "POST /api/advice/crop-care (Cotton Vegetative - EN)",
+      "latency_ms": 799.87,
+      "details": "Steps: 5, Cautions: 1, WeatherSync: rain=16%, spray=ideal"
+    },
+    {
+      "status": "PASS",
+      "category": "Advice",
+      "name": "POST /api/advice/crop-care (Cotton Flowering - TE)",
+      "latency_ms": 754.87,
+      "details": "Title='పత్తి: పూత & కాయ దశ (46–75 రోజులు)', First step='నేలలో తేమ సాధారణంగా ఉంది. సాధారణ పద్ధతిల...', Steps count=5"
+    },
+    {
+      "status": "PASS",
+      "category": "Advice",
+      "name": "POST /api/advice/diagnose (symYellow - Leaf Yellowing)",
+      "latency_ms": 4.78,
+      "details": "Title='ఆకులు పసుపు రంగులోకి మారడం (నత్రజని...', Steps=3, Sources=3"
+    },
+    {
+      "status": "PASS",
+      "category": "Advice",
+      "name": "POST /api/advice/diagnose (symHoles - Chewed Leaves & Stem Borer)",
+      "latency_ms": 3.47,
+      "details": "Title='ఆకులకు రంధ్రాలు / కాండం తొలిచే గొంగ...', Steps=3, Sources=3"
+    },
+    {
+      "status": "PASS",
+      "category": "Advice",
+      "name": "POST /api/advice/diagnose (symSpots - Leaf Spot / Fungal Blight)",
+      "latency_ms": 3.51,
+      "details": "Title='ఆకుమచ్చ తెగులు (శిలీంద్ర వ్యాధి)...', Steps=3, Sources=3"
+    },
+    {
+      "status": "PASS",
+      "category": "QA",
+      "name": "POST /api/qa/ask (English ICAR adherence)",
+      "latency_ms": 32.32,
+      "details": "Answer='Based on ICAR and State Agricultural Universi...', Steps=4, Sources=['ICAR - Central Research Institute for Dryland Agriculture (CRIDA)', 'ANGRAU / PJTSAU Package of Practices', 'Krishi Vigyan Kendra (KVK) Extension Bulletins']"
+    },
+    {
+      "status": "PASS",
+      "category": "QA",
+      "name": "POST /api/qa/ask (Telugu Question & University Standards)",
+      "latency_ms": 26.79,
+      "details": "Answer='మీ పంట సమస్యను పరిశీలించాము. తెగులు లేదా...', Sources=3"
+    },
+    {
+      "status": "PASS",
+      "category": "Profile",
+      "name": "GET /api/profile",
+      "latency_ms": 10.24,
+      "details": "Name='రైతు మిత్రుడు (Farmer)', Unit='gunthas', Lang='te'"
+    },
+    {
+      "status": "PASS",
+      "category": "Profile",
+      "name": "PUT /api/profile (Update)",
+      "latency_ms": 15.95,
+      "details": "Successfully updated unit to 'cents' and alerts_mandi to True"
+    },
+    {
+      "status": "PASS",
+      "category": "Database",
+      "name": "PRAGMA integrity_check",
+      "latency_ms": 2.97,
+      "details": "Database structure is completely intact (ok)"
+    },
+    {
+      "status": "PASS",
+      "category": "Database",
+      "name": "PRAGMA foreign_key_check",
+      "latency_ms": 0.01,
+      "details": "Zero foreign key violations"
+    },
+    {
+      "status": "PASS",
+      "category": "Database",
+      "name": "Data Transparency Tags Verification",
+      "latency_ms": 0.14,
+      "details": "All 2 fields contain verified tags: ID 1: [soil=farmer_reported, water=farmer_reported, npk=measured], ID 2: [soil=farmer_reported, water=farmer_reported, npk=not_yet_known]"
+    },
+    {
+      "status": "PASS",
+      "category": "Database",
+      "name": "Chat Messages Table Persistence",
+      "latency_ms": 0.5,
+      "details": "Total logged interactions: 8"
+    }
+  ],
+  "warnings": [],
+  "verdict": "OPERATIONAL_PASS"
+}
